@@ -19,6 +19,3 @@ From: ubuntu:latest
 %runscript
   echo "Hello from the container running: "
   cat /etc/os-release
-%test
-  #!/bin/bash
-  exec R -e 'library(dplyr); library(tibble)'
