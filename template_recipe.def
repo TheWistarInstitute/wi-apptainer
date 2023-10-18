@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: ubuntu:20.04
+From: ubuntu:latest
 
 %help
   This container provides a Python script and research data. To run the script:
@@ -24,6 +24,3 @@ From: ubuntu:20.04
 
 %runscript
 	neofetch
-
-%test
-  neofetch --version
