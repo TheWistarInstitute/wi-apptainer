@@ -9,9 +9,10 @@ From: ubuntu:20.04
   The script is found in /opt/scripts and the data is found in /opt/data.
 
 %labels
-  AUTHOR_NAME Alan Turing
-  AUTHOR_EMAIL aturing@wistar.org
+  AUTHOR_NAME Alex Harral
+  AUTHOR_EMAIL aharral@wistar.org
   VERSION 1.0
+
 
 %environment
   export PATH=/opt/miniconda3/bin:${PATH}
