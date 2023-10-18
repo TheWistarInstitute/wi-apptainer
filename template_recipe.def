@@ -21,9 +21,9 @@ From: ubuntu:20.04
 %post -c /bin/bash
   apt-get -y update && apt-get -y upgrade
 	apt-get -y install neofetch
-	
+
 %runscript
 	neofetch
 
 %test
-  /opt/miniconda3/bin/python --version
+  neofetch --version
