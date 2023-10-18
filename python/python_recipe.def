@@ -30,10 +30,10 @@ From: ubuntu:20.04
   /opt/miniconda3/bin/conda install pandas -y
 
   mkdir -p /opt/scripts && cd /opt/scripts
-  wget https://tigress-web.princeton.edu/~jdh4/myscript.py
+  wget https://github.com/TheWistarInstitute/Apptainer/blob/main/python/myscript.py
 
   mkdir -p /opt/data && cd /opt/data
-  wget https://tigress-web.princeton.edu/~jdh4/mydata.csv
+  wget https://github.com/TheWistarInstitute/Apptainer/blob/main/python/mydata.csv
  
   # cleanup
   apt-get -y autoremove --purge

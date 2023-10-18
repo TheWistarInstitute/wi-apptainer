@@ -27,10 +27,10 @@ From: r-base:4.2.2
   R -e 'install.packages(c("dplyr", "tidyverse"))'
 
   mkdir -p /opt/scripts && cd /opt/scripts
-  wget https://tigress-web.princeton.edu/~jdh4/myscript.R
+  wget https://github.com/TheWistarInstitute/Apptainer/blob/main/R/myscript.R
 
   mkdir -p /opt/data && cd /opt/data
-  wget https://tigress-web.princeton.edu/~jdh4/mydata.csv
+  wget https://github.com/TheWistarInstitute/Apptainer/blob/main/R/mydata.csv
 
 %runscript
   Rscript /opt/scripts/myscript.R
