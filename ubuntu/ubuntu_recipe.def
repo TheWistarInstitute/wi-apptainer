@@ -1,0 +1,24 @@
+Bootstrap: docker
+From: ubuntu:latest
+
+%help
+  This container provides an Ubuntu machine
+
+    $ singularity run myimage.sif  # or ./myimage.sif
+
+
+%labels
+  AUTHOR_NAME Alan Turing
+  AUTHOR_EMAIL aturing@wistar.org
+  VERSION 1.0
+
+%post -c /bin/bash
+  # update the package lists
+  apt-get -y update
+
+%runscript
+  echo "Hello from the container running: "
+  cat /etc/os-release
+%test
+  #!/bin/bash
+  exec R -e 'library(dplyr); library(tibble)'
