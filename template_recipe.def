@@ -1,0 +1,29 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%help
+  This container provides a Python script and research data. To run the script:
+
+    $ apptainer run myimage.sif  # or ./myimage.sif
+
+  The script is found in /opt/scripts and the data is found in /opt/data.
+
+%labels
+  AUTHOR_NAME Alex Harral
+  AUTHOR_EMAIL aharral@wistar.org
+  VERSION 1.0
+
+
+%environment
+  # set system locale
+  export LC_ALL='C'
+
+%post -c /bin/bash
+  apt-get -y update && apt-get -y upgrade
+	apt-get -y install neofetch
+	
+%runscript
+	neofetch
+
+%test
+  /opt/miniconda3/bin/python --version
