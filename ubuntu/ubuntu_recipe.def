@@ -4,8 +4,7 @@ From: ubuntu:latest
 %help
   This container provides an Ubuntu machine
 
-    $ singularity run myimage.sif  # or ./myimage.sif
-
+    $ apptainer run myimage.sif  # or ./myimage.sif
 
 %labels
   AUTHOR_NAME Alan Turing
@@ -15,7 +14,8 @@ From: ubuntu:latest
 %post -c /bin/bash
   # update the package lists
   apt-get -y update
+  apt-get -y install neofetch
 
 %runscript
-  echo "Hello from the container running: "
-  cat /etc/os-release
+  echo "Hello from the container!!!"
+  neofetch
