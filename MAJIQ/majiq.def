@@ -26,7 +26,7 @@ From: ubuntu:latest
 
     # Install Python3.8 and pip
     apt -y install python3.8
-    apt -y install python3.8-pip
+    apt -y install python3-pip
 
     # Install HTSlib - environment set in %environments section
     apt -y install libhts-dev
