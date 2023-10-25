@@ -35,7 +35,7 @@ From: ubuntu:latest
     apt -y install build-essential
     pip install setuptools
     
-%test
+%runscript
   echo "OS Release" cat /etc/os-release
   echo "GCC Complier Version: " gcc --version
   echo "Python Version" python3 -version
