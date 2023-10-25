@@ -8,8 +8,6 @@ From: ubuntu:latest
 
     $ apptainer run myimage.sif  # or ./myimage.sif
 
-  The script is found in /opt/scripts and the data is found in /opt/data.
-
 %labels
   AUTHOR_NAME Alex Harral
   AUTHOR_EMAIL aharral@wistar.org
@@ -18,19 +16,26 @@ From: ubuntu:latest
 %environment
   # set system locale
   export LC_ALL='C'
+
   # change to where library/include directories are installed
   export HTSLIB_LIBRARY_DIR=$HOME/install/htslib-1.13/lib
   export HTSLIB_INCLUDE_DIR=$HOME/install/htslib-1.13/include
 
 %post -c /bin/bash
   apt -y update && apt-get -y upgrade
-	apt -y install neofetch
-    apt -y install python3
-    apt -y install python3-pip
+
+    # Install Python3.8 and pip
+    apt -y install python3.8
+    apt -y install python3.8-pip
+
+    # Install HTSlib - environment set in %environments section
     apt -y install libhts-dev
+
+    # Install the gcc C++ compiler
     apt -y install build-essential
     pip install setuptools
     
-%runscript
-	neofetch
-    gcc --version
+%test
+  echo "OS Release" cat /etc/os-release
+  echo "GCC Complier Version: " gcc --version
+  echo "Python Version" python3 -version
