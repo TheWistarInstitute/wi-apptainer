@@ -1,4 +1,4 @@
-Bootstrap: Docker
+Bootstrap: docker
 From: rockylinux:8.6
 
 %help
