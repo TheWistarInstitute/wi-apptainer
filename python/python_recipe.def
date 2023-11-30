@@ -27,14 +27,10 @@ From: ubuntu:20.04
   wget https://repo.anaconda.com/miniconda/${INSTALL_SCRIPT}
   bash ${INSTALL_SCRIPT} -b -p /opt/miniconda3
   rm ${INSTALL_SCRIPT}
-  /opt/miniconda3/bin/conda install pandas -y
 
   mkdir -p /opt/scripts && cd /opt/scripts
   wget https://github.com/TheWistarInstitute/wi-hpc-apptainer/blob/main/python/my_script.py
 
-  mkdir -p /opt/data && cd /opt/data
-  wget https://github.com/TheWistarInstitute/wi-hpc-apptainer/blob/main/python/my_data.csv
-  
   # cleanup
   apt-get -y autoremove --purge
   apt-get -y clean
