@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: ensemblorg/wiggletools 
+
+%help
+  Apptainer definition file based off the wiggletools container
+
+%labels
+  Author: Alex Harral
+  Email: aharral@wistar.org
+  Version: 0.1
+
+%post
+  apt update && apt install -y --no-install-recommends\
+  vim
+
+%runscript
+  wiggletools
