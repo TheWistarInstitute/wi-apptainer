@@ -19,7 +19,7 @@ From: ubuntu:latest
   libfftw3-dev libtiff-dev libpng-dev ghostscript libxft-dev 
 
   # Clone repo, checkout version 5 branch, and pull updates
-  git clone https://github.com/3dem.git
+  git clone https://github.com/3dem/relion.git
   cd relion
   git checkout ver5.0
   git pull
