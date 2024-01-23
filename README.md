@@ -7,7 +7,7 @@ Please see the [WI-HPC Apptainer documentation](https://hpc.apps.wistar.org/guid
 To contribute to this repository, please clone, checkout, and submit a pull request:
 
 ```bash
-git clone https://github.com/TheWistarInstitute/Apptainer.git 
+git clone https://github.com/TheWistarInstitute/wi-hpc-apptainer.git 
 git pull
 git checkout -b <your-new-branch>
 
@@ -18,4 +18,4 @@ git commit -m "your commit message here"
 git push
 ```
 
-Create [Pull Request](https://github.com/TheWistarInstitute/Apptainer/compare)
+Create [Pull Request](https://github.com/TheWistarInstitute/wi-hpc-apptainer/compare)
