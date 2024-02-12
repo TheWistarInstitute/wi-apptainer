@@ -1,0 +1,32 @@
+Bootstrap: docker
+From: ubuntu:20.04
+
+%help
+
+%labels
+  AUTHOR_NAME Alex Harral
+  AUTHOR_EMAIL aharral@wistar.org
+  VERSION 1.0
+
+%post -c /bin/bash
+  # update the package lists
+  apt-get -y update
+
+  # install dependencies for tidyverse
+  apt-get -y install libxml2-dev libcurl4-openssl-dev libssl-dev software-properties-common apt-transport-https gnupg wget
+
+  # install extra packages
+  apt-get -y install file vim
+
+  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9 && \
+  add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/' && \
+  apt-get install -y r-base=3.6.3-1* r-base-dev=3.6.3-1*
+
+  # install R packages
+  R -e 'install.packages("BiocManager", repos="https://cran.rstudio.com")'
+  R -e 'install.packages(c("dplyr", "tidyverse"))'
+  R -e 'BiocManager::install("DiffBind", version = "2.14")'
+
+%runscript
+
+%test
