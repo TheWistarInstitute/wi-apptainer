@@ -10,9 +10,10 @@ From: r-base:3.6.3
 
 %post -c /bin/bash
   # install R packages
-  R -e 'install.packages("BiocManager", repos="https://cran.rstudio.com")'
-  R -e 'install.packages(c("dplyr", "tidyverse"))'
-  R -e 'BiocManager::install("DiffBind", version = "3.10")'
+  R -e 'if (!require("BiocManager", quietly = TRUE))
+          install.packages("BiocManager")
+        BiocManager::install(version = "3.10")'
+  R -e 'BiocManager::install("DiffBind")'
 
 %runscript
 
