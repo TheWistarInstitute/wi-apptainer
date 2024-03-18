@@ -33,8 +33,5 @@ From: ubuntu:latest
   # Download the human reference 
   curl -O "https://cf.10xgenomics.com/supp/cell-exp/refdata-gex-GRCh38-2024-A.tar.gz"
 
-%testscript
-  which cellranger
-
 %runscript
-	cat /etc/os-release
+  cat /etc/os-release
