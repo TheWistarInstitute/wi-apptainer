@@ -20,6 +20,7 @@ From: ubuntu:latest
   
   # update and upgrade system
   apt-get -y update && apt-get -y upgrade
+  apt-get -y install curl
 
   # Change into the /opt/ directory
   cd /opt
