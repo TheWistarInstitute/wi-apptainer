@@ -1,0 +1,27 @@
+Bootstrap: docker
+From: ubunut:latest
+
+%post
+    apt update && apt install -y tcsh make \
+               gcc gfortran \
+               flex bison patch bc wget \
+               xorg-dev libz-dev libbz2-dev
+
+    INSTALL_DIR=/opt/amber24
+
+    mkdir INSTALL_DIR
+
+    tar xvjf AmberTools24.tar.bz2 -C INSTALL_DIR
+    tar xvjf Amber24.tar.bz2 -C INSTALL_DIR
+
+    cd INSTALL_DIR/amber24_src/build
+
+    ./run_cmake
+
+    make install
+
+    source ../amber.sh
+
+    
+
+    

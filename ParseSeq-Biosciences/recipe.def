@@ -14,10 +14,11 @@ From: ubuntu:latest
 
 %post -c /bin/bash
   apt-get -y update && apt-get -y upgrade
-  apt-get -y install wget
+  apt-get -y install wget unzip
 
   # Install miniconda
   cd /opt/
+  mkdir analysis expdata genomes
   wget https://repo.anaconda.com/minconda/Miniconda3-latest-Linux-x86_64.sh
   bash Miniconda3-latest-Linux-x86_64.sh
 
@@ -25,14 +26,12 @@ From: ubuntu:latest
   conda create -n spipe conda-forge::python==3.10
   conda activate spipe
   
-  # Create required folders
-  mkdir analysis expdata genomes
   
   # Pull zipped archive
-  wget https://github.com/TheWistarInstitute/wi-hpc-apptainer/blob/main/ParseSeq-Biosciences/ParseBiosciences-Pipeline.1.2.1.zip -d /opt
+  wget https://github.com/TheWistarInstitute/wi-hpc-apptainer/blob/main/ParseSeq-Biosciences/ParseBiosciences-Pipeline.1.2.1.zip
 
   # Unzip archive
-  cd /opt/ParseBiosciences-Pipeline1.2.1
+  unzip ParseBiosciences-Pipeline.1.2.1.zip -d /opt
   bash ./install_dependencies_conda.sh -y --install
 
   pip install --no-cache-dir ./
